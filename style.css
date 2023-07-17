@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  background: #fef2e8;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  height: 96px;
+  padding: 24px 32px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 232px;
+  height: 48px;
+}
+
+.cart_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart {
+  width: 172px;
+  height: 40px;
+}
+
+.cart_title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+}
