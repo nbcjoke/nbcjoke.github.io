@@ -28,19 +28,22 @@ p {
   height: 48px;
 }
 
-.cart_container {
+.cart_container,
+.full_cart {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
 
-.cart {
+.cart,
+.full_cart-image {
   width: 40px;
   height: 40px;
 }
 
-.cart_container span {
+.cart_container span,
+.full_cart span {
   width: 85px;
   margin-left: 16px;
   font-family: "Open Sans", sans-serif;
@@ -53,18 +56,22 @@ p {
   transition: 0.3s;
 }
 
-.cart_container:hover span {
+.cart_container:hover span,
+.full_cart:hover span {
   color: #f73;
 }
 
 .full_cart {
-  position: relative;
   display: none;
+}
+
+.full_cart div {
+  position: relative;
 }
 
 .counter {
   position: absolute;
-  top: 16px;
+  top: 18px;
   left: 0;
   right: 0;
   color: #fff;
@@ -298,7 +305,7 @@ input[type="radio"]:checked::before {
 
 .action_button {
   position: relative;
-  width: 97px;
+  width: 149px;
   padding: 14px 24px;
   border-radius: 64px;
   border: 2px solid #ffbd5c;
@@ -324,34 +331,10 @@ input[type="radio"]:checked::before {
   margin: 0;
 }
 
-.addProduct_checkbox {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
 .addProducts_container {
-  display: none;
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-color: #ffbd5c;
-}
-
-.addProducts_container:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.addProduct_checkbox:checked ~ .addProducts_container {
-  width: 149px;
-  border-radius: 64px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 64px;
+  background-color: #ffbd5c;
 }
 
 .button {
@@ -366,7 +349,7 @@ input[type="radio"]:checked::before {
 }
 
 .input {
-  width: 45px;
+  width: 41px;
   text-align: center;
   background: transparent;
   border: none;
@@ -376,6 +359,10 @@ input[type="radio"]:checked::before {
   font-weight: 700;
   line-height: 16px;
   color: #023a6b;
+}
+
+.hidden {
+  display: none;
 }
 
 .input:focus {
@@ -451,7 +438,8 @@ input[type="radio"]:checked::before {
     padding: 16px 24px;
   }
 
-  .cart_container span {
+  .cart_container span,
+  .full_cart span {
     display: none;
   }
 

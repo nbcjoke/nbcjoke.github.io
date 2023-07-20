@@ -26,8 +26,15 @@
           <span> Shopping Cart </span>
         </div>
         <div class="full_cart">
-          <p class="counter"></p>
-          <img src="./assets/icons/full-cart.svg" alt="cart" />
+          <div>
+            <img
+              class="full_cart-image"
+              src="./assets/icons/full-cart.svg"
+              alt="cart"
+            />
+            <p class="counter"></p>
+          </div>
+          <span> Shopping Cart </span>
         </div>
       </div>
     </header>
@@ -72,24 +79,16 @@
                 </label>
               </div>
               <div class="actions_container">
-                <label class="action_button"
-                  >Add to cart
-                  <input class="addProduct_checkbox" type="checkbox" />
-                  <div class="addProducts_container">
-                    <button class="dec button" onclick="decrement('latte')">
-                      -
-                    </button>
-                    <input
-                      class="input latte"
-                      value="1"
-                      type="number"
-                      readonly
-                    />
-                    <button class="inc button" onclick="increment('latte')">
-                      +
-                    </button>
-                  </div>
-                </label>
+                <button class="action_button">Add to cart</button>
+                <div class="addProducts_container hidden">
+                  <button class="dec button" onclick="decrement('latte')">
+                    -
+                  </button>
+                  <input class="input latte" value="1" type="number" readonly />
+                  <button class="inc button" onclick="increment('latte')">
+                    +
+                  </button>
+                </div>
                 <div class="action_information" onclick="openInformation()">
                   <img src="./assets/icons/information.svg" alt="information" />
                 </div>
@@ -125,30 +124,21 @@
                 </label>
               </div>
               <div class="actions_container">
-                <label class="action_button"
-                  >Add to cart
-                  <input class="addProduct_checkbox" type="checkbox" />
-                  <div class="addProducts_container">
-                    <button
-                      class="dec button"
-                      onclick="decrement('cappuccino')"
-                    >
-                      -
-                    </button>
-                    <input
-                      class="input cappuccino"
-                      value="1"
-                      type="number"
-                      readonly
-                    />
-                    <button
-                      class="inc button"
-                      onclick="increment('cappuccino')"
-                    >
-                      +
-                    </button>
-                  </div>
-                </label>
+                <button class="action_button">Add to cart</button>
+                <div class="addProducts_container hidden">
+                  <button class="dec button" onclick="decrement('cappuccino')">
+                    -
+                  </button>
+                  <input
+                    class="input cappuccino"
+                    value="1"
+                    type="number"
+                    readonly
+                  />
+                  <button class="inc button" onclick="increment('cappuccino')">
+                    +
+                  </button>
+                </div>
                 <div class="action_information" onclick="openInformation()">
                   <img src="./assets/icons/information.svg" alt="information" />
                 </div>
@@ -178,25 +168,16 @@
                 </label>
               </div>
               <div class="actions_container">
-                <label class="action_button"
-                  >Add to cart
-                  <input class="addProduct_checkbox" type="checkbox" />
-                  <div class="addProducts_container">
-                    <button
-                      class="dec button"
-                      onclick="decrement('moccachino')"
-                    >
-                      -
-                    </button>
-                    <input class="input moccachino" value="1" type="number" />
-                    <button
-                      class="inc button"
-                      onclick="increment('moccachino')"
-                    >
-                      +
-                    </button>
-                  </div>
-                </label>
+                <button class="action_button">Add to cart</button>
+                <div class="addProducts_container hidden">
+                  <button class="dec button" onclick="decrement('moccachino')">
+                    -
+                  </button>
+                  <input class="input moccachino" value="1" type="number" />
+                  <button class="inc button" onclick="increment('moccachino')">
+                    +
+                  </button>
+                </div>
                 <div class="action_information" onclick="openInformation()">
                   <img src="./assets/icons/information.svg" alt="information" />
                 </div>
