@@ -36,7 +36,7 @@ const decrement = (productValue) => {
   let box = input.parentElement;
 
   if (newValue < 1) {
-    box.style.opacity = "0";
+    box.style.display = "none";
   }
 
   if (counter < 1) {
