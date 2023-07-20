@@ -57,13 +57,25 @@ p {
   color: #f73;
 }
 
-.cart_title {
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+.full_cart {
+  position: relative;
+  display: none;
+}
+
+.counter {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  color: #fff;
+  text-align: center;
+  font-family: "Recoleta", sans-serif;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 100%;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .container {
@@ -180,6 +192,15 @@ p {
   color: orange;
   border: 3px solid #fff;
   border-radius: 24px;
+  transition: 0.3s;
+}
+
+.form_radio input[type="radio"]:hover {
+  scale: 1.1;
+}
+
+.form_radio input[type="radio"]:checked:hover {
+  scale: 1;
 }
 
 input[type="radio"]::before {
@@ -276,12 +297,15 @@ input[type="radio"]:checked::before {
 }
 
 .action_button {
-  padding: 16px 24px;
+  position: relative;
+  width: 97px;
+  padding: 14px 24px;
   border-radius: 64px;
   border: 2px solid #ffbd5c;
   background: transparent;
   color: #023a6b;
   font-size: 14px;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
   line-height: 16px;
@@ -294,7 +318,78 @@ input[type="radio"]:checked::before {
   background: #ffbd5c;
 }
 
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.addProduct_checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.addProducts_container {
+  display: none;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-color: #ffbd5c;
+}
+
+.addProducts_container:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.addProduct_checkbox:checked ~ .addProducts_container {
+  width: 149px;
+  border-radius: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 52px;
+  height: 48px;
+  border-radius: 24px;
+  border: none;
+  background-color: #ffbd5c;
+  transition: 0.3s;
+  font-size: 28px;
+  color: #023a6b;
+}
+
+.input {
+  width: 45px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  color: #023a6b;
+}
+
+.input:focus {
+  border: none;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #ff7733;
+  color: #fff;
+}
+
 .action_information {
+  cursor: pointer;
   transition: 0.3s;
 }
 
@@ -305,10 +400,6 @@ input[type="radio"]:checked::before {
 
 .action_information:hover {
   scale: 1.2;
-}
-
-.action_information img:hover {
-  cursor: pointer;
 }
 
 .sidenav {
