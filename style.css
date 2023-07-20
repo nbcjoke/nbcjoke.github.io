@@ -32,11 +32,29 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .cart {
-  width: 172px;
+  width: 40px;
   height: 40px;
+}
+
+.cart_container span {
+  width: 85px;
+  margin-left: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #023a6b;
+  transition: 0.3s;
+}
+
+.cart_container:hover span {
+  color: #f73;
 }
 
 .cart_title {
@@ -88,17 +106,20 @@ p {
   top: 124px;
   left: 144px;
   animation-name: rotate;
-  animation-duration: 5500ms;
+  animation-duration: 7500ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @keyframes rotate {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  50% {
     transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 
@@ -270,7 +291,7 @@ input[type="radio"]:checked::before {
 }
 
 .action_button:hover {
-  background: #ffb647;
+  background: #ffbd5c;
 }
 
 .action_information img {
@@ -280,4 +301,59 @@ input[type="radio"]:checked::before {
 
 .action_information img:hover {
   cursor: pointer;
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .container {
+    padding: 64px 85px 76px;
+  }
+
+  .products_container {
+    justify-content: start;
+    gap: 30px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 999px) {
+  .container {
+    padding: 64px 100px 76px;
+  }
+
+  .slogan_title {
+    width: 670px;
+    font-size: 44px;
+  }
+
+  .products_container {
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    height: 80px;
+    padding: 16px 24px;
+  }
+
+  .cart_container span {
+    display: none;
+  }
+
+  .container {
+    padding: 32px 24px 48px;
+  }
+
+  .slogan_title {
+    min-width: 330px;
+    width: 100%;
+    font-size: 24px;
+  }
+
+  .products_container {
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 40px;
+  }
 }
