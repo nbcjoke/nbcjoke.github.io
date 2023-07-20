@@ -5,11 +5,11 @@ const actionButtons = document.querySelectorAll(".action_button");
 let counter = 0;
 
 const openInformation = () => {
-  document.querySelector(".mySidenav").style.width = "440px";
+  document.querySelector(".side_information").style.width = "400px";
 };
 
 const closeInformation = () => {
-  document.querySelector(".mySidenav").style.width = "0";
+  document.querySelector(".side_information").style.width = "0";
 };
 
 const increment = (productValue) => {

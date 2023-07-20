@@ -101,7 +101,7 @@
             </div>
             <div class="product_information-container">
               <div class="product_information">
-                <p class="product_title">Extra Latte</p>
+                <p class="product_title">Cappuccino</p>
                 <div class="product_price"><p>$9.99</p></div>
               </div>
               <div class="form_radio">
@@ -151,7 +151,7 @@
             </div>
             <div class="product_information-container">
               <div class="product_information">
-                <p class="product_title">Extra Latte</p>
+                <p class="product_title">Moccachino</p>
                 <div class="product_price"><p>$7.29</p></div>
               </div>
               <div class="form_radio">
@@ -186,14 +186,38 @@
           </div>
         </div>
       </div>
-      <div class="sidenav mySidenav">
-        <a
-          href="javascript:void(0)"
-          class="closebtn"
-          onclick="closeInformation()"
-          >&times;</a
-        >
-        <div class="sidenav-navigation"></div>
+      <div class="side_modal side_information">
+        <div class="information">
+          <div class="product_information">
+            <p class="product_title info_title">Moccachino</p>
+            <div class="product_price"><p class="info_price">$7.29</p></div>
+          </div>
+          <div class="product_images">
+            <img
+              class="product_image"
+              src="./assets/images/latte.png"
+              alt="latte"
+            />
+            <img
+              class="product_rotate-image"
+              src="./assets/icons/rotate.svg"
+              alt="rotate"
+            />
+          </div>
+          <div class="information_container">
+            <p class="info_description">Calories<span>65</span></p>
+            <p class="info_description">Total Fat<span>2.4g</span></p>
+            <p class="info_description">Cholesterol<span>9.6mg</span></p>
+            <p class="info_description">Sodium<span>55mg</span></p>
+            <p class="info_description">Total Carbohydrate<span>6.8g</span></p>
+            <p class="info_description">Protein<span>4.2g</span></p>
+            <p class="info_description">Vitamin D<span>1.4mcg</span></p>
+            <p class="info_description">Calcium<span>158mg</span></p>
+          </div>
+          <button class="info_button" onclick="closeInformation()">
+            Cool, got it
+          </button>
+        </div>
       </div>
     </main>
     <script src="index.js"></script>
