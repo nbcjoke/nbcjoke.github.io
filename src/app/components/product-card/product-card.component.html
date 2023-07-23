@@ -1,0 +1,60 @@
+<div class="product">
+  <div class="product_images">
+    <img src="{{ product.img }}" alt="{{ product.name }}" />
+    <img
+      *ngIf="product.isAnimated"
+      class="product_rotate-image"
+      src="./assets/icons/rotate.svg"
+      alt="rotate"
+    />
+  </div>
+  <div class="product_information-container">
+    <div class="product_information">
+      <p class="product_title">{{ product.name }}</p>
+      <div class="product_price">
+        <p>${{ product.price }}</p>
+      </div>
+    </div>
+    <div class="form_radio">
+      <input
+        class="form_input"
+        type="radio"
+        name="{{ product.name }}"
+        value="250"
+        checked
+      />
+      <label class="label">250ML</label>
+      <input
+        class="form_input"
+        type="radio"
+        name="{{ product.name }}"
+        value="500"
+      />
+      <label class="label">500 ML</label>
+    </div>
+    <div class="checkbox">
+      <label class="label label_container">
+        <p>Add sugar</p>
+        <input type="checkbox" />
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="actions_container">
+      <button
+        *ngIf="!isActionsVisible"
+        class="action_button"
+        (click)="onAddProduct()"
+      >
+        Add to cart
+      </button>
+      <app-actions
+        *ngIf="isActionsVisible"
+        [product]="product"
+        (productRemoved)="onRemoveProduct()"
+      ></app-actions>
+      <div class="action_information" onclick="openInformation()">
+        <img src="./assets/icons/information.svg" alt="information" />
+      </div>
+    </div>
+  </div>
+</div>

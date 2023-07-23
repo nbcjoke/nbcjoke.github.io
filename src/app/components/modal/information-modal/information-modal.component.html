@@ -1,0 +1,40 @@
+<div class="product">
+  <div class="product_images">
+    <img src="./assets/images/latte.png" alt="latte" />
+    <img
+      class="product_rotate-image"
+      src="./assets/icons/rotate.svg"
+      alt="rotate"
+    />
+  </div>
+  <div class="product_information-container">
+    <div class="product_information">
+      <p class="product_title">Extra Latte</p>
+      <div class="product_price"><p>$8.99</p></div>
+    </div>
+    <div class="form_radio">
+      <input id="radio-1" type="radio" name="radio" value="250" checked />
+      <label class="label">250ML</label>
+      <input id="radio-2" type="radio" name="radio" value="500" />
+      <label class="label">500 ML</label>
+    </div>
+    <div class="checkbox">
+      <label class="label label_container">
+        <p>Add sugar</p>
+        <input type="checkbox" />
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="actions_container">
+      <button class="action_button">Add to cart</button>
+      <div class="addProducts_container hidden">
+        <button class="dec button" onclick="decrement('latte')">-</button>
+        <input class="input latte" value="1" type="number" readonly />
+        <button class="inc button" onclick="increment('latte')">+</button>
+      </div>
+      <div class="action_information" onclick="openInformation()">
+        <img src="./assets/icons/information.svg" alt="information" />
+      </div>
+    </div>
+  </div>
+</div>

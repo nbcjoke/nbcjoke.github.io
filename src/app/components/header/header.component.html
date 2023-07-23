@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="header_container">
+    <div class="logo_container">
+      <a href="#">
+        <img class="logo" src="./assets/icons/logo.svg" alt="logo" />
+      </a>
+    </div>
+    <div *ngIf="!counter" class="cart_container">
+      <div>
+        <img class="cart" src="./assets/icons/cart.svg" alt="cart" />
+      </div>
+      <span> Shopping Cart </span>
+    </div>
+    <div *ngIf="counter > 0" class="full_cart">
+      <div>
+        <img
+          class="full_cart-image"
+          src="./assets/icons/full-cart.svg"
+          alt="cart"
+        />
+        <p class="counter">
+          {{ counter }}
+        </p>
+      </div>
+      <span> Shopping Cart </span>
+    </div>
+  </div>
+</header>
