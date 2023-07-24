@@ -18,7 +18,7 @@ export class ShoppingCartService {
   public addProduct(product: any): void {
     this.addedProductsSubject$.next([
       ...this.addedProductsSubject$.value,
-      product,
+      { ...product, qty: 1 },
     ]);
     this.addedProductsCounter$.next(this.addedProductsCounter$.value + 1);
   }
@@ -35,20 +35,18 @@ export class ShoppingCartService {
     this.addedProductsCounter$.next(this.addedProductsCounter$.value - 1);
   }
 
-  public updateQty(product: any, quantity: number): void {
+  public updateQty(product: any, qty: number): void {
     const products = this.addedProductsSubject$.value;
-    console.log(quantity);
     const addedProductIndex = products.findIndex(
       (p) => p.name === product.name && p.price === product.price
     );
     const addedProduct = products[addedProductIndex];
     console.log(addedProduct);
-    const change = quantity - addedProduct.quantity;
-    console.log(addedProduct.quantity);
+    const change = qty - addedProduct.qty;
     console.log(change);
     this.addedProductsCounter$.next(this.addedProductsCounter$.value + change);
     if (addedProductIndex >= 0) {
-      products.splice(addedProductIndex, 1, { ...addedProduct, quantity });
+      products.splice(addedProductIndex, 1, { ...addedProduct, qty });
     }
     this.addedProductsSubject$.next(products);
   }

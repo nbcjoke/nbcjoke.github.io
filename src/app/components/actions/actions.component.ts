@@ -15,18 +15,18 @@ export class ActionsComponent {
 
   public increment(): void {
     this.counter += 1;
-    this.shoppingCartService.addProduct(this.product);
+    this.shoppingCartService.updateQty(this.product, this.counter);
   }
 
   public decrement(): void {
     this.counter -= 1;
-    this.product.quantity = this.counter;
-    this.shoppingCartService.updateQty(this.product, this.product.quantity);
 
     if (this.counter === 0) {
       this.shoppingCartService.removeProduct(this.product);
       this.counter = 1;
       this.productRemoved.emit();
+    } else {
+      this.shoppingCartService.updateQty(this.product, this.counter);
     }
   }
 }

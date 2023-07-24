@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ProductComponent } from './pages/product/product.component';
+import { ProductsComponent } from './pages/products/products.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ActionsComponent } from './components/actions/actions.component';
 
@@ -12,7 +12,7 @@ import { ActionsComponent } from './components/actions/actions.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProductComponent,
+    ProductsComponent,
     ProductCardComponent,
     ActionsComponent,
   ],

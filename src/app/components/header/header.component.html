@@ -1,17 +1,17 @@
 <header class="header">
   <div class="header_container">
     <div class="logo_container">
-      <a href="#">
+      <a [routerLink]="['']">
         <img class="logo" src="./assets/icons/logo.svg" alt="logo" />
       </a>
     </div>
-    <div *ngIf="!counter" class="cart_container">
+    <div *ngIf="!counter" class="cart_container" [routerLink]="['/cart']">
       <div>
         <img class="cart" src="./assets/icons/cart.svg" alt="cart" />
       </div>
       <span> Shopping Cart </span>
     </div>
-    <div *ngIf="counter > 0" class="full_cart">
+    <div *ngIf="counter > 0" class="full_cart" [routerLink]="['/cart']">
       <div>
         <img
           class="full_cart-image"
