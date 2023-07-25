@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ProductsApiService } from 'src/app/services/products-api.service';
+import { Product } from 'src/app/types/product';
 
 @Component({
   selector: 'app-products',
@@ -9,7 +10,7 @@ import { ProductsApiService } from 'src/app/services/products-api.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  public products$!: Observable<any[]>;
+  public products$!: Observable<Product[]>;
 
   constructor(private productsApiService: ProductsApiService) {}
 

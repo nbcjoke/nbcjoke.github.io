@@ -12,23 +12,24 @@
     <div class="product_information">
       <p class="product_title">{{ product.name }}</p>
       <div class="product_price">
-        <p>${{ product.price }}</p>
+        <p>${{ product.price[size] }}</p>
       </div>
     </div>
     <div class="form_radio">
       <input
         class="form_input"
         type="radio"
-        name="{{ product.name }}"
-        value="250"
-        checked
+        [name]="product.name"
+        [value]="250"
+        [(ngModel)]="size"
       />
       <label class="label">250ML</label>
       <input
         class="form_input"
         type="radio"
-        name="{{ product.name }}"
-        value="500"
+        [name]="product.name"
+        [value]="500"
+        [(ngModel)]="size"
       />
       <label class="label">500 ML</label>
     </div>

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
+import { Product } from 'src/app/types/product';
 
 @Component({
   selector: 'app-actions',
@@ -7,7 +8,7 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
   styleUrls: ['./actions.component.scss'],
 })
 export class ActionsComponent {
-  @Input() public product: any;
+  @Input() public product!: Product;
   @Output() public productRemoved: EventEmitter<void> = new EventEmitter();
   public counter = 1;
 
