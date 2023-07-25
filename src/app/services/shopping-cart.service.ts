@@ -41,9 +41,7 @@ export class ShoppingCartService {
       (p) => p.name === product.name && p.price === product.price
     );
     const addedProduct = products[addedProductIndex];
-    console.log(addedProduct);
     const change = qty - addedProduct.qty;
-    console.log(change);
     this.addedProductsCounter$.next(this.addedProductsCounter$.value + change);
     if (addedProductIndex >= 0) {
       products.splice(addedProductIndex, 1, { ...addedProduct, qty });
