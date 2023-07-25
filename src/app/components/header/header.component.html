@@ -7,17 +7,13 @@
     </div>
     <div *ngIf="!counter" class="cart_container" [routerLink]="['/cart']">
       <div>
-        <img class="cart" src="./assets/icons/cart.svg" alt="cart" />
+        <img class="cart_image" src="./assets/icons/cart.svg" alt="cart" />
       </div>
       <span> Shopping Cart </span>
     </div>
-    <div *ngIf="counter > 0" class="full_cart" [routerLink]="['/cart']">
-      <div>
-        <img
-          class="full_cart-image"
-          src="./assets/icons/full-cart.svg"
-          alt="cart"
-        />
+    <div *ngIf="counter > 0" class="cart_container" [routerLink]="['/cart']">
+      <div class="full_cart">
+        <img class="cart_image" src="./assets/icons/full-cart.svg" alt="cart" />
         <p class="counter">
           {{ counter }}
         </p>

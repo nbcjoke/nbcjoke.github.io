@@ -1,25 +1,25 @@
 .container {
   padding: 64px 240px 76px;
-}
 
-.slogan_title {
-  width: 750px;
-  margin-bottom: 64px;
-  font-family: "Eczar", sans-serif;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 120%;
-  color: #023a6b;
-}
+  .slogan_title {
+    width: 750px;
+    margin-bottom: 64px;
+    font-family: "Eczar", sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    color: #023a6b;
 
-.slogan_title span {
-  color: #f73;
-}
+    span {
+      color: #f73;
+    }
+  }
 
-.products_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 72px;
+  .products_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 72px;
+  }
 }

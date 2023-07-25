@@ -2,43 +2,37 @@
   display: flex;
   border-radius: 64px;
   background-color: #ffbd5c;
-}
 
-.button {
-  width: 52px;
-  height: 48px;
-  border-radius: 24px;
-  border: none;
-  background-color: #ffbd5c;
-  transition: 0.3s;
-  font-size: 28px;
-  color: #023a6b;
-  cursor: pointer;
-}
+  .button {
+    width: 52px;
+    height: 48px;
+    border-radius: 24px;
+    border: none;
+    background-color: #ffbd5c;
+    transition: 0.3s;
+    font-size: 28px;
+    color: #023a6b;
+    cursor: pointer;
+    &:hover {
+      background-color: #ff7733;
+      color: #fff;
+    }
+  }
 
-.input {
-  width: 41px;
-  text-align: center;
-  background: transparent;
-  border: none;
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 16px;
-  color: #023a6b;
-}
-
-.hidden {
-  display: none;
-}
-
-.input:focus {
-  border: none;
-  outline: none;
-}
-
-.button:hover {
-  background-color: #ff7733;
-  color: #fff;
+  .input {
+    width: 41px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    color: #023a6b;
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
 }
