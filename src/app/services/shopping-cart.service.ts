@@ -70,16 +70,4 @@ export class ShoppingCartService {
     }
     this.addedProductsSubject$.next(products);
   }
-
-  public removeProductFromCart(product: CartProduct) {
-    const products = this.addedProductsSubject$.value;
-    const filteredProducts = products.filter(
-      ({ id, price, size }) =>
-        id !== product.id && price[size] !== product.price[product.size]
-    );
-    this.addedProductsSubject$.next(filteredProducts);
-    this.addedProductsCounter$.next(
-      this.addedProductsCounter$.value - product.qty
-    );
-  }
 }

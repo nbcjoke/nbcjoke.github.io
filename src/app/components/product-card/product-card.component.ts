@@ -79,7 +79,6 @@ export class ProductCardComponent implements OnInit {
     });
     this.counter = added?.qty || 0;
     this.isAdded = !!added;
-    console.log('change');
   }
 
   public onCounterUpdate(change: number) {
