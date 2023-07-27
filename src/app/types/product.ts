@@ -15,7 +15,7 @@ export interface ProductDetails {
   totalCarbohydrate: number;
   protein: number;
   vitaminD: number;
-  cancium: number;
+  calcium: number;
 }
 
 export interface CartProduct extends Product {

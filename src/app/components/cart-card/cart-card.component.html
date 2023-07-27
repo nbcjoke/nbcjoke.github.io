@@ -1,0 +1,37 @@
+<div class="product">
+  <div class="product_images">
+    <img src="{{ cartProduct.img }}" alt="{{ cartProduct.name }}" />
+  </div>
+  <div class="product_information-container">
+    <div class="product_information">
+      <p class="product_title">{{ cartProduct.name }}</p>
+      <div class="product_price">
+        <p>{{ cartProduct.price[cartProduct.size] }}</p>
+      </div>
+    </div>
+    <div class="cart_options">
+      <div class="product_option">
+        <img src="./../../../assets/icons/cup.svg" alt="cup" />
+        <p>{{ cartProduct.size }}ML</p>
+      </div>
+      <div *ngIf="cartProduct.withSugar" class="product_option">
+        <img src="./../../../assets/icons/sugar.svg" alt="sugar" />
+        <p>Sugar</p>
+      </div>
+    </div>
+  </div>
+  <div class="actions_container">
+    <app-actions
+      [counter]="cartProduct.qty"
+      (updateCounter)="onUpdateCounter($event)"
+    ></app-actions>
+    <div
+      class="delete"
+      (click)="
+        this.shoppingCartService.removeProduct(cartProduct, cartProduct.size)
+      "
+    >
+      <img src="../../../../assets/icons/delete.svg" alt="delete" />
+    </div>
+  </div>
+</div>

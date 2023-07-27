@@ -1,0 +1,23 @@
+<div class="container">
+  <p class="slogan_title">Shopping Cart</p>
+  <div class="info_container">
+    <div class="products_container">
+      <app-cart-card
+        *ngFor="let cartProduct of cartProducts$ | async"
+        [cartProduct]="cartProduct"
+      ></app-cart-card>
+    </div>
+    <div class="cart_info-container">
+      <div class="cart_info">
+        <p class="info_title">Checkout</p>
+        <div>
+          <p class="info"><span></span></p>
+        </div>
+        <p class="info">Delivery<span>$5</span></p>
+        <p class="info">
+          Total<span>${{ total }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

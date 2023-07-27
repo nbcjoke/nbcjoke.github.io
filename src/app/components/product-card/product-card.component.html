@@ -22,6 +22,7 @@
         [name]="product.name"
         [value]="250"
         [(ngModel)]="size"
+        (change)="checkProductState()"
       />
       <label class="label">250ML</label>
       <input
@@ -30,32 +31,80 @@
         [name]="product.name"
         [value]="500"
         [(ngModel)]="size"
+        (change)="checkProductState()"
       />
       <label class="label">500 ML</label>
     </div>
     <div class="checkbox">
       <label class="label label_container">
         <p>Add sugar</p>
-        <input type="checkbox" />
+        <input type="checkbox" [(ngModel)]="withSugar" value="true" />
         <span class="checkmark"></span>
       </label>
     </div>
     <div class="actions_container">
-      <button
-        *ngIf="!isActionsVisible"
-        class="action_button"
-        (click)="onAddProduct()"
-      >
+      <button *ngIf="!isAdded" class="action_button" (click)="onAddProduct()">
         Add to cart
       </button>
       <app-actions
-        *ngIf="isActionsVisible"
+        *ngIf="isAdded"
         [product]="product"
+        [counter]="counter"
         (productRemoved)="onRemoveProduct()"
+        (updateCounter)="onCounterUpdate($event)"
       ></app-actions>
-      <div class="action_information" onclick="openInformation()">
+      <div class="action_information" (click)="toggle()">
         <img src="./assets/icons/information.svg" alt="information" />
       </div>
     </div>
+  </div>
+</div>
+<div
+  [@openClose]="isOpen ? 'open' : 'closed'"
+  class="side_modal side_information"
+>
+  <div class="information">
+    <div class="product_information-modal">
+      <p class="info_title">{{ product.name }}</p>
+      <div class="info_price-container">
+        <p class="info_price">${{ product.price[size] }}</p>
+      </div>
+    </div>
+    <div class="product_images">
+      <img class="product_image" src="./assets/images/latte.png" alt="latte" />
+      <img
+        *ngIf="product.isAnimated"
+        class="product_rotate-image"
+        src="./assets/icons/rotate.svg"
+        alt="rotate"
+      />
+    </div>
+    <div class="information_container">
+      <p class="info_description">
+        Calories<span>{{ product.details.calories }}</span>
+      </p>
+      <p class="info_description">
+        Total Fat<span>{{ product.details.totalFat }}g</span>
+      </p>
+      <p class="info_description">
+        Cholesterol<span>{{ product.details.cholesterol }}mg</span>
+      </p>
+      <p class="info_description">
+        Sodium<span>{{ product.details.sodium }}mg</span>
+      </p>
+      <p class="info_description">
+        Total Carbohydrate<span>{{ product.details.totalCarbohydrate }}g</span>
+      </p>
+      <p class="info_description">
+        Protein<span>{{ product.details.protein }}g</span>
+      </p>
+      <p class="info_description">
+        Vitamin D<span>{{ product.details.vitaminD }}mcg</span>
+      </p>
+      <p class="info_description">
+        Calcium<span>{{ product.details.calcium }}mg</span>
+      </p>
+    </div>
+    <button class="info_button" (click)="closeModal()">Cool, got it</button>
   </div>
 </div>

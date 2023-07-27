@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
-import { Product } from 'src/app/types/product';
+import { CartProduct, Product } from 'src/app/types/product';
 
 @Component({
   selector: 'app-actions',
@@ -9,25 +9,17 @@ import { Product } from 'src/app/types/product';
 })
 export class ActionsComponent {
   @Input() public product!: Product;
+  @Input() public counter = 1;
   @Output() public productRemoved: EventEmitter<void> = new EventEmitter();
-  public counter = 1;
+  @Output() public updateCounter: EventEmitter<number> = new EventEmitter();
 
   constructor(private shoppingCartService: ShoppingCartService) {}
 
   public increment(): void {
-    this.counter += 1;
-    this.shoppingCartService.updateQty(this.product, this.counter);
+    this.updateCounter.emit(1);
   }
 
   public decrement(): void {
-    this.counter -= 1;
-
-    if (this.counter === 0) {
-      this.shoppingCartService.removeProduct(this.product);
-      this.counter = 1;
-      this.productRemoved.emit();
-    } else {
-      this.shoppingCartService.updateQty(this.product, this.counter);
-    }
+    this.updateCounter.emit(-1);
   }
 }

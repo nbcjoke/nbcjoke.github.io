@@ -15,7 +15,7 @@ export const products = [
       totalCarbohydrate: 6.8,
       protein: 4.2,
       vitaminD: 1.4,
-      cancium: 158,
+      calcium: 158,
     },
     isAnimated: true,
   },
@@ -35,7 +35,7 @@ export const products = [
       totalCarbohydrate: 5.5,
       protein: 3.9,
       vitaminD: 2,
-      cancium: 169,
+      calcium: 169,
     },
   },
   {
@@ -54,7 +54,7 @@ export const products = [
       totalCarbohydrate: 8.8,
       protein: 2.1,
       vitaminD: 2.2,
-      cancium: 111,
+      calcium: 111,
     },
   },
 ];
